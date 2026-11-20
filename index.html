@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presensi XIF</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">XIF</div>
+            <div>
+                <h2>Presensi XIF</h2>
+                <small>Hadir, Terhubung, Bersama</small>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <a href="#beranda" class="nav-link active">⌂ <span>Beranda</span></a>
+            <a href="#presensi" class="nav-link">☑ <span>Presensi</span></a>
+            <a href="#informasi" class="nav-link">▤ <span>Informasi Kelas</span></a>
+            <a href="#jadwal" class="nav-link">▦ <span>Jadwal Pelajaran</span></a>
+            <a href="#pengumuman" class="nav-link">♧ <span>Pengumuman</span></a>
+            <a href="#tentang" class="nav-link">ⓘ <span>Tentang Kelas</span></a>
+        </nav>
+
+        <div class="sidebar-card">
+            <div class="people-icon">♟</div>
+            <h3>Kelas XIF</h3>
+            <p>Satu Kelas, Satu Tujuan</p>
+        </div>
+
+        <div class="sidebar-footer">
+            © 2026 Presensi XIF
+        </div>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="topbar">
+            <div>
+                <h3>Dashboard</h3>
+                <p>Selamat datang di Presensi XIF</p>
+            </div>
+
+            <div class="topbar-right">
+                <span id="current-date"></span>
+                <span class="public-badge">● Akses Publik</span>
+            </div>
+        </header>
+
+
+        <!-- BERANDA -->
+        <section id="beranda">
+
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="hero-label">WELCOME TO OUR CLASS</span>
+                    <h1>Presensi XIF</h1>
+                    <p>
+                        Sistem presensi dan informasi kelas
+                        untuk seluruh siswa, guru, dan pihak terkait.
+                    </p>
+
+                    <a href="#presensi" class="hero-button">
+                        Mulai Presensi →
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- STATISTIK -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✓</div>
+                    <div>
+                        <p>Hadir Hari Ini</p>
+                        <h2 id="total-hadir">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon yellow">◷</div>
+                    <div>
+                        <p>Izin / Sakit</p>
+                        <h2 id="total-izin">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon red">✕</div>
+                    <div>
+                        <p>Alpa</p>
+                        <h2 id="total-alpa">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">♟</div>
+                    <div>
+                        <p>Total Siswa</p>
+                        <h2 id="total-siswa">0</h2>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRESENSI -->
+        <section id="presensi" class="content-grid">
+
+            <div class="panel attendance-panel">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">ATTENDANCE</span>
+                        <h2>Presensi Kelas</h2>
+                    </div>
+                    <span class="live-badge">● Live</span>
+                </div>
+
+                <p class="description">
+                    Silakan pilih nama dan status kehadiranmu.
+                </p>
+
+                <form id="attendance-form">
+
+                    <label for="student-name">Nama Siswa</label>
+                    <select id="student-name" required>
+                        <option value="">Pilih nama siswa</option>
+                    </select>
+
+                    <label for="attendance-status">Status Kehadiran</label>
+                    <select id="attendance-status" required>
+                        <option value="Hadir">Hadir</option>
+                        <option value="Izin">Izin</option>
+                        <option value="Sakit">Sakit</option>
+                        <option value="Alpa">Alpa</option>
+                    </select>
+
+                    <label for="attendance-note">Keterangan (Opsional)</label>
+                    <textarea id="attendance-note"
+                        placeholder="Tuliskan keterangan..."></textarea>
+
+                    <button type="submit" class="primary-button">
+                        Kirim Presensi →
+                    </button>
+
+                    <p id="attendance-message"></p>
+
+                </form>
+            </div>
+
+
+            <!-- INFORMASI KELAS -->
+            <div id="informasi" class="panel info-panel">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">CLASS INFORMATION</span>
+                        <h2>Informasi Kelas</h2>
+                    </div>
+                    <span class="info-icon">ⓘ</span>
+                </div>
+
+                <div class="class-title">
+                    <h1>XIF</h1>
+                    <p>Kelas XIF - Tahun Ajaran 2026/2027</p>
+                </div>
+
+                <div class="info-list">
+                    <div><span>Wali Kelas</span><strong>Belum diisi</strong></div>
+                    <div><span>Jadwal</span><strong>Senin - Jumat</strong></div>
+                    <div><span>Jam Sekolah</span><strong>07.00 - 15.00</strong></div>
+                    <div><span>Jumlah Siswa</span><strong id="info-total">0 Siswa</strong></div>
+                </div>
+
+                <a href="#tentang" class="secondary-button">
+                    Lihat Detail →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- JADWAL -->
+        <section id="jadwal" class="panel schedule-panel">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">CLASS SCHEDULE</span>
+                    <h2>Jadwal Pelajaran</h2>
+                </div>
+            </div>
+
+            <div class="schedule-list">
+                <div class="schedule-item">
+                    <strong>Senin</strong>
+                    <span>Jadwal belum tersedia</span>
+                </div>
+                <div class="schedule-item">
+                    <strong>Selasa</strong>
+                    <span>Jadwal belum tersedia</span>
+                </div>
+                <div class="schedule-item">
+                    <strong>Rabu</strong>
+                    <span>Jadwal belum tersedia</span>
+                </div>
+                <div class="schedule-item">
+                    <strong>Kamis</strong>
+                    <span>Jadwal belum tersedia</span>
+                </div>
+                <div class="schedule-item">
+                    <strong>Jumat</strong>
+                    <span>Jadwal belum tersedia</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- PENGUMUMAN -->
+        <section id="pengumuman" class="panel announcement-panel">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">LATEST NEWS</span>
+                    <h2>Pengumuman Terbaru</h2>
+                </div>
+            </div>
+
+            <div class="announcement-item">
+                <div class="announcement-icon">📌</div>
+                <div>
+                    <h3>Selamat Datang di Presensi XIF</h3>
+                    <p>
+                        Website ini digunakan sebagai pusat informasi
+                        dan presensi kelas XIF.
+                    </p>
+                    <small>Informasi Kelas</small>
+                </div>
+            </div>
+
+            <div class="announcement-item">
+                <div class="announcement-icon">📢</div>
+                <div>
+                    <h3>Perhatikan Jadwal Pelajaran</h3>
+                    <p>
+                        Selalu periksa jadwal pelajaran terbaru
+                        sebelum memulai kegiatan belajar.
+                    </p>
+                    <small>Informasi Akademik</small>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- TENTANG -->
+        <section id="tentang" class="panel about-panel">
+            <span class="section-label">ABOUT US</span>
+            <h2>Tentang Kelas XIF</h2>
+            <p>
+                Presensi XIF merupakan website informasi kelas
+                yang dibuat untuk mempermudah pengelolaan kehadiran,
+                penyampaian pengumuman, dan akses informasi akademik.
+            </p>
+            <p class="about-tagline">Hadir, Terhubung, Bersama.</p>
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 Presensi XIF. All Rights Reserved.</p>
+            <p>Made with care by XIF.</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
